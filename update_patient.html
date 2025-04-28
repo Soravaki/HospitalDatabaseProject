@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <title>Update Patient Information</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <h1>Update Patient Information</h1>
-    <form action="update_patient_process.php" method="POST">
+    <form id="verifyPatientID" method="POST">
         <label for="pt_id">Patient ID:</label><br>
-        <input type="number" id="pt_id" name="pt_id" required><br><br>
+        <input type="text" id="pt_id" name="pt_id" required><br><br>
+        <input type="submit" value="Verify Patient ID">
+    </form>
+
+    <form id = "updatePatientInfo" form action="update_patient.php" style="display:none;" method="POST">
+
+        <input type="hidden" id="pt_id_hidden" name="pt_id">        <!-- hidden to keep pt_id -->
 
         <label for="firstname">First Name:</label><br>
         <input type="text" id="firstname" name="firstname"><br><br>
@@ -47,5 +54,6 @@
 
         <input type="submit" value="Update Patient">
     </form>
+    <script src = "update_patient.js"></script>
 </body>
 </html>
