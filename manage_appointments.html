@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Appointments</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Manage Appointments</h2>
+
+  <form id="reschedule_form">
+    <h3>Reschedule Appointment</h3>
+    <input type="text" name="Appt_ID" id="Appt_ID" placeholder="Appointment ID" required><br><br>
+    <input type="date" name="New_Date" id="New_Date" required><br><br>
+    <input type="time" name="New_Time" id="New_Time" required><br><br>
+    <button type="submit">Reschedule</button> <!-- on submit, reschedule_form hears and runs reschedule_appointment.php -->
+  </form>
+
+  <form action="cancel_appointment.php" method="POST">
+    <h3>Cancel Appointment</h3>
+    <input type="text" name="Appt_ID" placeholder="Appointment ID" required><br><br>
+    <button type="submit">Cancel Appointment</button>
+  </form>
+
+  <script src="reschedule_form.js"></script>
+</body>
+</html>

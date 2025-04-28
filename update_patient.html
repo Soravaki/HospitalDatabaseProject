@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Patient Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Update Patient Information</h1>
+    <form action="update_patient_process.php" method="POST">
+        <label for="pt_id">Patient ID:</label><br>
+        <input type="number" id="pt_id" name="pt_id" required><br><br>
+
+        <label for="firstname">First Name:</label><br>
+        <input type="text" id="firstname" name="firstname"><br><br>
+
+        <label for="mi">Middle Initial:</label><br>
+        <input type="text" id="mi" name="mi" maxlength="1"><br><br>
+
+        <label for="lastname">Last Name:</label><br>
+        <input type="text" id="lastname" name="lastname"><br><br>
+
+        <label for="phone_num">Phone Number:</label><br>
+        <input type="text" id="phone_num" name="phone_num"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob"><br><br>
+
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+            <option value="">--Select--</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select><br><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br><br>
+
+        <label for="primary_phy_ssn">Primary Physician SSN:</label><br>
+        <input type="text" id="primary_phy_ssn" name="primary_phy_ssn"><br><br>
+
+        <label for="insurance_name">Insurance Name:</label><br>
+        <input type="text" id="insurance_name" name="insurance_name"><br><br>
+
+        <input type="submit" value="Update Patient">
+    </form>
+</body>
+</html>

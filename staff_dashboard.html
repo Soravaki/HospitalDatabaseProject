@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Access</title>
+</head>
+<body>
+    <h1>Staff Access</h1>
+    <link rel="stylesheet" href="style.css">
+    
+    <form id="staffLoginForm" method>
+        <label for="ssn">Enter your Employee SSN:</label><br>
+        <input type="text" id="ssn" name="ssn" required><br><br>
+        <button type="button" onclick="verifySSN()">Login</button>
+    </form>
+
+    <div id="staffOptions" style="display:none;">
+        <h2>Staff Menu</h2>
+        <button onclick="location.href='update_patient.html'">Update Patient Data</button>
+        <button onclick="location.href='manage_appointments.html'">Manage Appointments (Reschedule/Cancel)</button>
+    </div>
+    
+
+    <script>
+        function verifySSN() {
+            var ssn = document.getElementById("ssn").value;
+                
+		if (ssn.length === 9 && !isNaN(ssn)) {
+             // Use AJAX to send SSN to PHP and verify in the database
+             var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'staff_verify.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            // Send SSN to verify.php
+            xhr.send('ssn=' + encodeURIComponent(ssn));
+
+            // When the server responds
+            xhr.onload = function() {
+                console.log("Response from server: " + xhr.responseText);  // Log the response
+                if (xhr.status == 200) {
+                    // If the server returns "Login successful", display staff options
+                    if (xhr.responseText === "Login successful") {
+                        document.getElementById("staffLoginForm").style.display = "none";
+                        document.getElementById("staffOptions").style.display = "block";
+                    } else {
+                        alert("Invalid SSN. Please try again.");
+                    }
+                } else {
+                    alert("Error verifying SSN. Please try again.");
+                }
+            };
+        } else {
+            alert("Invalid SSN. Please enter a 9-digit number.");
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Patient Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form id="registration_form">
+    <h2>New Patient Registration</h2> 
+
+    <h3>Personal Details</h3>
+
+<input type="text" name="FirstName" placeholder="First Name" required><br><br>
+<input type="text" name="MI" placeholder="Middle Initial"><br><br>
+<input type="text" name="LastName" placeholder="Last Name" required><br><br>
+<input type="text" name="ssn" placeholder="Social Security Number" required><br><br>
+<input type="text" name="Phone_Num" placeholder="Phone Number"><br><br>
+<input type="email" name="Email" placeholder="Email Address"><br><br>
+<input type="date" name="DOB" required><br><br>
+
+
+<select name="Gender" required>
+  <option value="M">Male</option>
+  <option value="F">Female</option>
+  <option value="Other">Other</option>
+</select><br><br>
+
+
+<input type="text" name="StreetAddress" placeholder="Street Address" required><br><br>
+<input type="text" name="City" placeholder="City" required><br><br>
+<input type="text" name="State" placeholder="State" required><br><br>
+
+
+
+<input type="text" name="Insurance_Name" placeholder="Insurance Name"><br><br>
+<input type="text" name="Insurance_Num" placeholder="Insurance Number"><br><br>
+
+<button type="submit">Register</button>
+
+  </form>
+  <script src="new_patient_registration.js"></script>
+
+</body>
+</html>
