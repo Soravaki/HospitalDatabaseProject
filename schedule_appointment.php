@@ -31,7 +31,10 @@ function createApptID($conn){
 
 function grabEssn($ptid, $conn){
     // Query to check if the patient has a primary physician
-    $query = "SELECT primary_phy_ssn FROM patient WHERE pt_id = $1";
+    $query = "  SELECT primary_phy_ssn 
+                FROM patient 
+                WHERE pt_id = $1";
+                
     $result = pg_query_params($conn, $query, [$ptid]);
 
     // If query fails, log the error and return false

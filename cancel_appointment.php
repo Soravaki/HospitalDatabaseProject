@@ -19,29 +19,36 @@ if (!$conn) {
 }
 
 // Get the submitted SSN
-$ssn = $_POST['ssn'];
+$apptid = $_POST['Appt_ID'];
+
 // Log the SSN to the server log
-error_log("SSN received: " . $ssn); // This will log the SSN in the PHP error log
+error_log("Appt_ID received: " . $apptid); // This will log the appt_id in the PHP error log
 
 // protects against SQL injection attacks
 $query = "  SELECT * 
-            FROM employee 
-            WHERE ssn::text = $1";
+            FROM appointment 
+            WHERE appt_id::text = $1"; // checks if appt_id is in the appointments
             
-$result = pg_query_params($conn, $query, array($ssn));
+$result = pg_query_params($conn, $query, array($apptid));
 
 if (!$result) {
     error_log("Database query failed: " . pg_last_error($conn));
 }
 
 if (pg_num_rows($result) > 0) {
-    // SSN found
-    echo "Login successful";
+    // Appointment found
+    $query = "  DELETE FROM appointment 
+                WHERE appt_id::text = $1";
+    $result = pg_query_params($conn, $query, array($apptid));
+    echo "Appointment Canceled";
+    
 } else {
-    // SSN not found
-    echo "Invalid SSN. Please try again.";
+    // Appointment not found
+    echo "Invalid Appointment ID";
     
 }
+
+
 
 // Close the connection
 pg_free_result($result);

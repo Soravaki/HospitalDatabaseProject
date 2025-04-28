@@ -27,7 +27,10 @@ $time = $_POST['New_Time'];
 error_log("Appt_ID received: " . $apptid); // This will log the appt_id in the PHP error log
 
 // protects against SQL injection attacks
-$query = "SELECT * FROM appointment WHERE appt_id::text = $1"; // checks if appt_id is in the appointments
+$query = "  SELECT * 
+            FROM appointment 
+            WHERE appt_id::text = $1"; // checks if appt_id is in the appointments
+            
 $result = pg_query_params($conn, $query, array($apptid));
 
 if (!$result) {

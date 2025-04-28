@@ -25,7 +25,10 @@ $ptid = $_POST['pt_id'];
 error_log("pt_id received: " . $ptid); // This will log the appt_id in the PHP error log
 
 // protects against SQL injection attacks
-$query = "SELECT * FROM patient WHERE pt_id::text = $1"; // checks if appt_id is in the appointments
+$query = "  SELECT * 
+            FROM patient 
+            WHERE pt_id::text = $1"; // checks if appt_id is in the appointments
+            
 $result = pg_query_params($conn, $query, array($ptid));
 
 if (!$result) {

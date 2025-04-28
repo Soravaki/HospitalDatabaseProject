@@ -29,7 +29,10 @@ function createID($firstname, $mi, $lastname, $conn){
 
 function checkInsurance($insurancename, $insurancenum, $conn) {
     // Query to check if the insurance name already exists in the database
-    $query = "SELECT insurance_num FROM insurance WHERE insurance_name = $1";
+    $query = "  SELECT insurance_num 
+                FROM insurance 
+                WHERE insurance_name = $1";
+                
     $result = pg_query_params($conn, $query, array($insurancename));
 
     // If query fails, log the error and return false
