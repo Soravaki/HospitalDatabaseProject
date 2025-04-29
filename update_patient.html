@@ -1,59 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Update Patient Information</title>
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8">
+  <title>Update Patient Information</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Update Patient Information</h1>
-    <form id="verifyPatientID" method="POST">
-        <label for="pt_id">Patient ID:</label><br>
-        <input type="text" id="pt_id" name="pt_id" required><br><br>
-        <input type="submit" value="Verify Patient ID">
+  <section class="container">
+    <header>Update Patient Information</header>
+
+    <form id="verifyPatientID" method="POST" class="form">
+      <div class="input-box">
+        <label>Patient ID</label>
+        <input type="text" id="pt_id" name="pt_id" required>
+      </div>
+
+      <button type="submit">Verify Patient ID</button>
     </form>
 
-    <form id = "updatePatientInfo" form action="update_patient.php" style="display:none;" method="POST">
+    <form id="updatePatientInfo" action="update_patient.php" style="display:none;" method="POST" class="form">
 
-        <input type="hidden" id="pt_id_hidden" name="pt_id">        <!-- hidden to keep pt_id -->
+      <input type="hidden" id="pt_id_hidden" name="pt_id">
 
-        <label for="firstname">First Name:</label><br>
-        <input type="text" id="firstname" name="firstname"><br><br>
+      <div class="input-box">
+        <label>First Name</label>
+        <input type="text" id="firstname" name="firstname">
+      </div>
 
-        <label for="mi">Middle Initial:</label><br>
-        <input type="text" id="mi" name="mi" maxlength="1"><br><br>
+      <div class="input-box">
+        <label>Middle Initial</label>
+        <input type="text" id="mi" name="mi" maxlength="1">
+      </div>
 
-        <label for="lastname">Last Name:</label><br>
-        <input type="text" id="lastname" name="lastname"><br><br>
+      <div class="input-box">
+        <label>Last Name</label>
+        <input type="text" id="lastname" name="lastname">
+      </div>
 
-        <label for="phone_num">Phone Number:</label><br>
-        <input type="text" id="phone_num" name="phone_num"><br><br>
+      <div class="input-box">
+        <label>Phone Number</label>
+        <input type="text" id="phone_num" name="phone_num">
+      </div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
+      <div class="input-box">
+        <label>Email</label>
+        <input type="email" id="email" name="email">
+      </div>
 
-        <label for="dob">Date of Birth:</label><br>
-        <input type="date" id="dob" name="dob"><br><br>
+      <div class="input-box">
+        <label>Date of Birth</label>
+        <input type="date" id="dob" name="dob">
+      </div>
 
-        <label for="gender">Gender:</label><br>
-        <select id="gender" name="gender">
-            <option value="">--Select--</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-        </select><br><br>
+      <div class="input-box">
+        <label>Gender</label>
+        <select id="gender" name="gender" class="select-box">
+          <option value="">--Select--</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
 
-        <label for="address">Address:</label><br>
-        <input type="text" id="address" name="address"><br><br>
+      <div class="input-box">
+        <label>Address</label>
+        <input type="text" id="address" name="address">
+      </div>
 
-        <label for="primary_phy_ssn">Primary Physician SSN:</label><br>
-        <input type="text" id="primary_phy_ssn" name="primary_phy_ssn"><br><br>
+      <div class="input-box">
+        <label>Primary Physician SSN</label>
+        <input type="text" id="primary_phy_ssn" name="primary_phy_ssn">
+      </div>
 
-        <label for="insurance_name">Insurance Name:</label><br>
-        <input type="text" id="insurance_name" name="insurance_name"><br><br>
+      <div class="input-box">
+        <label>Insurance Name</label>
+        <input type="text" id="insurance_name" name="insurance_name">
+      </div>
 
-        <input type="submit" value="Update Patient">
+      <button type="submit">Update Patient</button>
+      <button type="button" onclick="window.location.href='index.html'" style="margin-top: 20px;">Return to Home</button>
+
     </form>
-    <script src = "update_patient.js"></script>
+
+  </section>
+  <script src="update_patient.js"></script>
 </body>
 </html>

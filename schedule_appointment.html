@@ -6,26 +6,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <section class="container">
+    <header>Schedule Appointment</header>
+    <form id="appointment_form" class="form" action="javascript:void(0);">
 
-    <form id = "appointment_form">
-    
-    <h2 class="main-header">Schedule Appointment</h2>
+      <div class="input-box">
+        <label>First Name</label>
+        <input type="text" name="patient_fname" placeholder="First Name" required>
+      </div>
 
-    <h3>Patient Information</h3>
-    <input type="text" name="patient_fname" placeholder="First Name" required><br><br>
-    <input type="text" name="patient_lname" placeholder="Last Name" required><br><br>
-    <input type="text" name="patient_id" placeholder="Patient ID" required><br><br>
+      <div class="input-box">
+        <label>Last Name</label>
+        <input type="text" name="patient_lname" placeholder="Last Name" required>
+      </div>
 
-    <!-- <h3>Doctor Information</h3>
-    <input type="text" name="doctor_fname" placeholder="Doctor's First Name" required><br><br>
-    <input type="text" name="doctor_lname" placeholder="Doctor's Last Name" required><br><br> -->
+      <div class="input-box">
+        <label>Patient ID</label>
+        <input type="text" name="patient_id" placeholder="Patient ID" required>
+      </div>
 
-    <h3>Appointment Details</h3>
-    <input type="date" name="date" required><br><br>
-    <input type="time" name="time" required><br><br>
-    
-    <button type="submit">Book Appointment</button>
-  </form>
+      <div class="column">
+        <div class="input-box">
+          <label>Appointment Date</label>
+          <input type="date" name="date" required>
+        </div>
+
+        <div class="input-box">
+          <label>Appointment Time</label>
+          <input type="time" name="time" required>
+        </div>
+      </div>
+
+      <button type="submit">Book Appointment</button>
+      <button type="button" onclick="window.location.href='index.html'" style="margin-top: 20px;">Return to Home</button>
+
+    </form>
+  </section>
   <script src="schedule_appointment.js"></script>
 </body>
 </html>

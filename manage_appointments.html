@@ -6,22 +6,46 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Manage Appointments</h2>
+  <section class="container">
+    <header>Manage Appointments</header>
 
-  <form id="reschedule_form">
-    <h3>Reschedule Appointment</h3>
-    <input type="text" name="Appt_ID" id="Appt_ID" placeholder="Appointment ID" required><br><br>
-    <input type="date" name="New_Date" id="New_Date" required><br><br>
-    <input type="time" name="New_Time" id="New_Time" required><br><br>
-    <button type="submit">Reschedule</button> <!-- on submit, reschedule_form hears and runs reschedule_appointment.php -->
-  </form>
+    <form id="reschedule_form" class="form">
+      <h3>Reschedule Appointment</h3>
 
-  <form id="cancel_appointment">
-    <h3>Cancel Appointment</h3>
-    <input type="text" name="Appt_ID" placeholder="Appointment ID" required><br><br>
-    <button type="submit">Cancel Appointment</button>
-  </form>
+      <div class="input-box">
+        <label>Appointment ID</label>
+        <input type="text" name="Appt_ID" id="Appt_ID" placeholder="Appointment ID" required>
+      </div>
 
+      <div class="column">
+        <div class="input-box">
+          <label>New Date</label>
+          <input type="date" name="New_Date" id="New_Date" required>
+        </div>
+
+        <div class="input-box">
+          <label>New Time</label>
+          <input type="time" name="New_Time" id="New_Time" required>
+        </div>
+      </div>
+
+      <button type="submit">Reschedule</button>
+    </form>
+
+    <form id="cancel_appointment" class="form" style="margin-top: 40px;">
+      <h3>Cancel Appointment</h3>
+
+      <div class="input-box">
+        <label>Appointment ID</label>
+        <input type="text" name="Appt_ID" placeholder="Appointment ID" required>
+      </div>
+
+      <button type="submit">Cancel Appointment</button>
+      <button type="button" onclick="window.location.href='index.html'" style="margin-top: 20px;">Return to Home</button>
+
+    </form>
+
+  </section>
   <script src="manage_appointments.js"></script>
 </body>
 </html>

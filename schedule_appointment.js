@@ -7,18 +7,23 @@ document.getElementById("appointment_form").addEventListener("submit", function(
     xhr.open("POST", "schedule_appointment.php", true);
     xhr.onload = function() {
         if (xhr.status == 200) {
-            // Check the response text to see if the appointment ID is invalid
-            if (xhr.responseText === "Appointment Scheduled") {
-                alert(xhr.responseText);
+            var responseText = xhr.responseText.trim(); // Clean extra spaces
+            if (responseText === "Appointment Scheduled") {
+                alert("Success: " + responseText);
             } else {
-                alert(xhr.responseText);
+                alert("Error: " + responseText);
             }
-            // Handle the server's response
-            document.getElementById("responseMessage").innerHTML = xhr.responseText;
+            // Update the page with the server's response
+            document.getElementById("responseMessage").innerHTML = responseText;
         } else {
             // In case of an error
+            alert("Failed to connect to server.");
             document.getElementById("responseMessage").innerHTML = "Error making appointment. Please try again.";
         }
+    };
+
+    xhr.onerror = function() {
+        alert("Network error.");
     };
 
     // Send the form data to the server

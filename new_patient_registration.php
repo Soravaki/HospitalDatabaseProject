@@ -101,13 +101,16 @@ error_log("Info received");
 
 $pt_id = createID($firstname, $mi, $lastname, $conn);
 
+$address = $_POST["StreetAddress"] . ", " . $_POST["City"] . ", " . $_POST["State"];
+
 checkInsurance($insurancename, $insurancenum, $conn);
 
 // protects against SQL injection attacks
 $query = "INSERT INTO patient(firstname, mi, lastname, pt_id, phone_num, email, dob, gender, address, primary_phy_ssn, insurance_name) 
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)";
 
-$result = pg_query_params($conn, $query, array($firstname, $mi, $lastname, $pt_id, $phonenum, $email, $dob, $gender, $streetadr, null, $insurancename));
+$result = pg_query_params($conn, $query, array($firstname, $mi, $lastname, $pt_id, $phonenum, $email, $dob, $gender, $address, null, $insurancename));
+
 
 // Check if the query was successful
 if (!$result) {

@@ -1,138 +1,187 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f0f4f8;
-  scroll-behavior: smooth;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background:#001f4d;
 }
 
-form {
-  background: #fff;
-  max-width: 600px;
+.container {
+  position: relative;
+  max-width: 700px;
   width: 100%;
-  margin: 50px auto;
-  padding: 30px;
+  background: #fff;
+  padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-h2, h3 {
+.container header {
+  font-size: 1.5rem;
   color: #333;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-weight: 500;
   text-align: center;
 }
 
-input, select {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 8px 0 20px 0;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 400;
-  outline: none;
+.container .form {
+  margin-top: 30px;
 }
 
-button {
+.form .input-box {
   width: 100%;
-  padding: 14px;
-  background-color: #4070f4;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: #333;
+  font-weight: 500;
+}
+
+.form :where(.input-box input, .select-box select) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.input-box input:focus, .select-box select:focus {
+  border-color: rgb(130, 106, 251);
+  box-shadow: 0 0 0 2px rgba(130, 106, 251, 0.2);
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .gender-box {
+  margin-top: 20px;
+}
+
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.form .gender {
+  column-gap: 5px;
+}
+
+.gender input {
+  accent-color: rgb(130, 106, 251);
+}
+
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+
+.gender label {
+  color: #707070;
+}
+
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #707070;
+  padding: 0 15px;
+}
+
+.form button {
+  height: 55px;
+  width: 100%;
   color: #fff;
+  background:#00BCD4;;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 30px;
   border: none;
   border-radius: 6px;
-  font-size: 16px;
-  font-weight: 500;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #3058d0;
+.form button:hover {
+  background: #0097a7;
 }
 
-/* Navbar */
+/* Responsive design */
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
+
 nav {
-  background-color: #4070f4;
-  padding: 1rem 2rem;
+  background: navy; /* Navy blue background */
+  padding: 15px 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.nav__logo {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
+nav .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white; /* Make logo white */
+  text-decoration: none;
 }
 
-.nav__logo span {
-  color: #d0e1fd;
-}
-
-.nav__links {
+nav ul {
+  list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 20px;
 }
 
-.nav__links a {
-  font-size: 1rem;
-  color: #fff;
+nav ul li a {
+  text-decoration: none;
+  color: white; /* Make nav links white */
   font-weight: 500;
-}
-
-.nav__links a:hover {
-  text-decoration: underline;
-}
-
-/* Header */
-header {
-  text-align: center;
-  padding: 5rem 2rem;
-  background-color: #fff;
-}
-
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #666;
-}
-
-
-/* Contact Section */
-.contact-info {
-  margin-top: 5rem;
-  text-align: center;
-}
-
-.contact-info h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.contact-info p {
   font-size: 1rem;
-  color: #666;
-  margin-bottom: 0.5rem;
+  transition: color 0.3s;
 }
 
-/* Footer */
-footer {
-  margin-top: 3rem;
-  background-color: #4070f4;
-  padding: 1rem;
-  text-align: center;
-  color: #fff;
-  font-size: 0.9rem;
+nav ul li a:hover {
+  color: lightblue; /* Light blue on hover for contrast */
 }

@@ -3,44 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <title>New Patient Registration</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"> <!-- your new style.css -->
 </head>
 <body>
+  <section class="container">
+    <header>New Patient Registration</header>
+    <form id="registration_form" class="form">
 
-  <form id="registration_form">
-    <h2>New Patient Registration</h2> 
+      <div class="input-box">
+        <label>First Name</label>
+        <input type="text" name="FirstName" placeholder="First Name" required>
+      </div>
 
-    <h3>Personal Details</h3>
+      <div class="input-box">
+        <label>Middle Initial</label>
+        <input type="text" name="MI" placeholder="Middle Initial">
+      </div>
 
-<input type="text" name="FirstName" placeholder="First Name" required><br><br>
-<input type="text" name="MI" placeholder="Middle Initial"><br><br>
-<input type="text" name="LastName" placeholder="Last Name" required><br><br>
-<input type="text" name="ssn" placeholder="Social Security Number" required><br><br>
-<input type="text" name="Phone_Num" placeholder="Phone Number"><br><br>
-<input type="email" name="Email" placeholder="Email Address"><br><br>
-<input type="date" name="DOB" required><br><br>
+      <div class="input-box">
+        <label>Last Name</label>
+        <input type="text" name="LastName" placeholder="Last Name" required>
+      </div>
 
+      <div class="input-box">
+        <label>Social Security Number</label>
+        <input type="text" name="ssn" placeholder="Social Security Number" required>
+      </div>
 
-<select name="Gender" required>
-  <option value="M">Male</option>
-  <option value="F">Female</option>
-  <option value="Other">Other</option>
-</select><br><br>
+      <div class="column">
+        <div class="input-box">
+          <label>Phone Number</label>
+          <input type="text" name="Phone_Num" placeholder="Phone Number">
+        </div>
 
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="email" name="Email" placeholder="Email Address">
+        </div>
+      </div>
 
-<input type="text" name="StreetAddress" placeholder="Street Address" required><br><br>
-<input type="text" name="City" placeholder="City" required><br><br>
-<input type="text" name="State" placeholder="State" required><br><br>
+      <div class="input-box">
+        <label>Date of Birth</label>
+        <input type="date" name="DOB" required>
+      </div>
 
+      <div class="gender-box">
+        <h3>Gender</h3>
+        <div class="gender-option">
+          <div class="gender">
+            <input type="radio" id="male" name="Gender" value="M" required>
+            <label for="male">Male</label>
+          </div>
+          <div class="gender">
+            <input type="radio" id="female" name="Gender" value="F">
+            <label for="female">Female</label>
+          </div>
+          <div class="gender">
+            <input type="radio" id="other" name="Gender" value="Other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+      </div>
 
+      <div class="input-box address">
+        <label>Street Address</label>
+        <input type="text" name="StreetAddress" placeholder="Street Address" required>
 
-<input type="text" name="Insurance_Name" placeholder="Insurance Name"><br><br>
-<input type="text" name="Insurance_Num" placeholder="Insurance Number"><br><br>
+        <div class="column">
+          <div class="input-box">
+            <label>City</label>
+            <input type="text" name="City" placeholder="City" required>
+          </div>
 
-<button type="submit">Register</button>
+          <div class="input-box">
+            <label>State</label>
+            <input type="text" name="State" placeholder="State" required>
+          </div>
+        </div>
+      </div>
 
-  </form>
+      <div class="column">
+        <div class="input-box">
+          <label>Insurance Name</label>
+          <input type="text" name="Insurance_Name" placeholder="Insurance Name">
+        </div>
+
+        <div class="input-box">
+          <label>Insurance Number</label>
+          <input type="text" name="Insurance_Num" placeholder="Insurance Number">
+        </div>
+      </div>
+
+      <button type="submit">Register</button>
+      <button type="button" onclick="window.location.href='index.html'" style="margin-top: 20px;">Return to Home</button>
+
+    </form>
+  </section>
+
   <script src="new_patient_registration.js"></script>
-
 </body>
 </html>

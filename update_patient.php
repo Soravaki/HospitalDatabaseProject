@@ -69,6 +69,13 @@ if (!$result) {
     error_log("Database query failed: " . pg_last_error($conn));
 }
 
+// After updating the patient information
+if ($result) {
+    echo "<script>alert('Patient information updated successfully!');</script>";
+} else {
+    echo "<script>alert('Failed to update patient information. Please try again.');</script>";
+}
+
 // Close the connection
 pg_free_result($result);
 pg_close($conn);

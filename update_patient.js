@@ -27,7 +27,6 @@ document.getElementById("verifyPatientID").addEventListener("submit", function(e
                 // Show the update form
                 document.getElementById("verifyPatientID").style.display = "none";
                 document.getElementById("updatePatientInfo").style.display = "block";
-                console.log("Success: " + response.success);  // Check if it's true or false
                 
             } else {
                 alert("Patient not found!");
@@ -40,19 +39,25 @@ document.getElementById("verifyPatientID").addEventListener("submit", function(e
 });
 
 // Handle the form submission for updating patient information
-document.getElementById("updatePatientInfo").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent normal form submission
+document.getElementById('updatePatientInfo').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting normally
 
-    var formData = new FormData(this); // Get all the form data
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "update_patient.php", true);
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            alert(pt_id); // Show success or failure message
+    // Perform Ajax request or submit form using fetch or XMLHttpRequest
+    fetch('update_patient.php', {
+        method: 'POST',
+        body: new FormData(this)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Display alert based on server response
+        if (data.includes('successfully')) {
+            alert('Patient information updated successfully!');
         } else {
-            alert("Error updating patient data.");
+            alert('Failed to update patient information. Please try again.');
         }
-    };
-    xhr.send(formData); // Send the form data to the server
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to update patient information. Please try again.');
+    });
 });

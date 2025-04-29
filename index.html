@@ -2,64 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HOSPITAL | Welcome</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TruHealth Care | Welcome</title>
+
+  <!-- Boxicons for icons -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <!-- Homepage CSS -->
+  <link rel="stylesheet" href="style-home.css">
 </head>
 
 <body>
 
-<nav>
-  <div class="nav__header">
-    <div class="nav__logo">
-      <a href="index.html" class="logo">Hos<span>pital</span></a>
-    </div>
-    <ul class="nav__links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="patient_type.html">Schedule Appointment</a></li>
-      <li><a href="staff_dashboard.html">Staff Access</a></li>
-    </ul>
-  </div>
-</nav>
-
-
+<!-- ====== Navigation Bar ====== -->
 <header>
-  <div class="header__content">
-    <h1>Welcome to <span>TruHealth Care</span></h1>
-    <div class="header__btn">
-      <a href="patient_type.html"><button class="btn">Schedule Appointment</button></a>
-    </div>
-  </div>
+  <a href="#home" class="logo">Tru<span>Health</span> Care</a>
+
+  <i class='bx bx-menu' id="menu-icon"></i>
+
+  <ul class="navbar">
+    <li><a href="#home">Home</a></li>
+    <li><a href="patient_type.html">Schedule Appointment</a></li>
+    <li><a href="#physicians">Our Physicians</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+    <li><a href="#business-hours">Business Hours</a></li>
+    <li><a href="staff_dashboard.html">Staff Access</a></li>
+  </ul>
 </header>
 
-<section class="section__container subscribe__container" id="contact">
-  <div class="subscribe__content">
-    <h2 class="section__header">Contact Us</h2>
-    <p class="section__description">
-      Phone: (123) 456-7890 <br>
-      Email: contact@truhealthcare.com <br>
-      Address: 123 Wellness Street, Health City, TX 75000
-    </p>
+<!-- ====== Home Section with Background Image ====== -->
+<section class="home" id="home">
+  <div class="overlay"></div> <!-- Background dark overlay -->
+  <div class="home-content">
+    <div class="home-text">
+      <h1>Welcome to TruHealth Care</h1>
+      <p>Your health is our highest priority.  
+         Providing exceptional healthcare services to all our patients with care and compassion.</p>
+      <a href="patient_type.html" class="btn">Schedule Appointment</a>
+    </div>
   </div>
 </section>
 
+<!-- ====== Our Physicians Section ====== -->
+<section class="products" id="physicians">
+  <div class="heading">
+    <h2>Meet Our Physicians</h2>
+  </div>
 
-<footer>
-  <div class="section__container footer__container">
-    <div class="footer__col">
-      <a href="index.html" class="logo">Tru<span>Health</span> Care</a>
+  <div class="products-container">
+    <div class="box">
+      <img src="https://shelleefisher.com/site/wp-content/uploads/2024/04/DrEzraHoover.jpg" alt="Dr. Ezra Hoover">
+      <h3>Dr. Ezra Hoover</h3>
+      <p>Orthopedic Surgeon</p>
     </div>
-    <div class="footer__col">
-      <ul class="footer__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="patient_type.html">Schedule Appointment</a></li>
-        <li><a href="staff_dashboard.html">Staff Access</a></li>
-      </ul>
+    <div class="box">
+      <img src="https://shelleefisher.com/site/wp-content/uploads/2024/08/RobertWood02-scaled-1.jpg" alt="Dr. Robert Wood">
+      <h3>Dr. Robert Wood</h3>
+      <p>Cardiologist</p>
+    </div>
+    <div class="box">
+      <img src="https://shelleefisher.com/site/wp-content/uploads/2024/04/MaureenJoyner02.jpg" alt="Dr. Maureen Joyner">
+      <h3>Dr. Maureen Joyner</h3>
+      <p>Neurologist</p>
     </div>
   </div>
-  <div class="footer__bar">
-    Copyright © 2025 TruHealth Care. All rights reserved.
+</section>
+
+<!-- ====== Contact Us Section ====== -->
+<section class="contact" id="contact">
+  <div class="heading">
+    <h2>Contact Us</h2>
   </div>
-</footer>
+  <div class="contact-container">
+    <p>Phone: (123) 456-7890</p>
+    <p>Email: contact@truhealthcare.com</p>
+    <p>Address: 123 Wellness Street, Health City, TX 75000</p>
+  </div>
+</section>
+
+<!-- ====== Business Hours Section ====== -->
+<section class="business-hours" id="business-hours">
+  <div class="heading">
+    <h2>Business Hours</h2>
+  </div>
+  <div class="contact-container">
+    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+    <p>Saturday: 10:00 AM - 2:00 PM</p>
+    <p>Sunday: Closed</p>
+  </div>
+</section>
+
+<!-- ====== Footer ====== -->
+<section class="footer">
+  <div class="footer-box">
+    <h2>TruHealth Care</h2>
+    <p>Providing exceptional medical care with compassion and dedication.</p>
+    <div class="social">
+      <a href="#"><i class='bx bxl-facebook'></i></a>
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+    </div>
+  </div>
+  <div class="footer-box">
+    <h3>Quick Links</h3>
+    <li><a href="#home">Home</a></li>
+    <li><a href="patient_type.html">Schedule Appointment</a></li>
+    <li><a href="#physicians">Our Physicians</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </div>
+  <div class="footer-box">
+    <h3>Contact Info</h3>
+    <div class="contact">
+      <span><i class='bx bxs-map'></i> 123 Wellness Street, Health City</span>
+      <span><i class='bx bxs-phone'></i> (123) 456-7890</span>
+      <span><i class='bx bxs-envelope'></i> contact@truhealthcare.com</span>
+    </div>
+  </div>
+</section>
+
+<!-- Copyright -->
+<div class="copyright">
+  <p>© 2025 TruHealth Care. All Rights Reserved.</p>
+</div>
+
+<!-- JavaScript for Navbar -->
+<script src="main.js"></script>
 
 </body>
 </html>
